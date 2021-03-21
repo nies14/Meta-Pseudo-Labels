@@ -226,11 +226,11 @@ def build_params_from_flags():
 # Create or delete `output_dir`
   if not gfile.IsDirectory(output_dir):
     logging.info(f'Path `{output_dir}` does not exist. Creating')
-    gfile.mkdir(output_dir)
+    gfile.MakeDirs(output_dir, mode=0o777)
   elif FLAGS.reset_output_dir:
     logging.info(f'Path `{output_dir}` exists. Removing')
-    gfile.remove(output_dir)
-    gfile.mkdir(output_dir)
+    gfile.DeleteRecursively(output_dir)
+    gfile.MakeDirs(output_dir, mode=0o777)
 
   global _flags
   params = HParams(
