@@ -182,6 +182,8 @@ class HParams(object):
         indent=indent)
 
   def __getattr__(self, k):
+    if k is None:
+      return
     return self.params_dict[k]
 
   def __contains__(self, k):
