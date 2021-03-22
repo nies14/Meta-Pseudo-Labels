@@ -1,1 +1,2 @@
-print("2")
+from meta_pseudo_labels import main 
+      main() 
