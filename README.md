@@ -33,7 +33,6 @@ python3 meta_pseudo_labels/ -m main.py \
   --output_dir=$output_dir \
   --model_type='resnet-50' \
   --log_every=100 \
-  --master="path/to/your/tpu/worker" \
   --image_size=32 \
   --num_classes=10 \
   --optim_type="momentum" \
